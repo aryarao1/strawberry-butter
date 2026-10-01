@@ -29,8 +29,8 @@ const definitions=[
  {id:'robe',name:'Pink bathrobe',sheet:'bathItems',tile:1,page:2,x:44,y:39,w:23,slot:'outfit'},
  {id:'soap',name:'Strawberry soap',sheet:'bathItems',tile:2,page:2,x:89,y:59,w:13,kind:'soap'},
  {id:'towel',name:'Pink towel',sheet:'bathItems',tile:3,page:2,x:89,y:48,w:17,kind:'towel'},
- {id:'clip-left',name:'Left strawberry hair clip',tile:15,page:0,x:27,y:40,w:7,slot:'clipLeft',attached:'girl'},
- {id:'clip-right',name:'Right strawberry hair clip',tile:15,page:0,x:47,y:40,w:7,slot:'clipRight',attached:'girl'}
+ {id:'clip-left',name:'Left strawberry hair clip',tile:15,page:1,x:42,y:34,w:7,kind:'clip'},
+ {id:'clip-right',name:'Right strawberry hair clip',tile:15,page:1,x:42,y:41,w:7,kind:'clip'}
 ].map(d=>({sheet:'accessories',...d}));
 let state={residencyVersion:4,page:0,opened:false,coverSide:'front',blanketOpen:false,catFed:false,pieces:definitions.map(d=>({...d})),makeup:{}};
 let selected=null,drag=null,z=30,toastTimer,heldClothing=null;
@@ -61,7 +61,7 @@ function playSound(kind){if(state.soundMuted)return;if(kind==='kitty'){playClip(
  if(kind==='splash'){rustle(.45,2200);tone(570,220,.12,.08);tone(750,320,.15,.24);}else if(kind==='page'||kind==='cloth'){rustle(kind==='page'?.20:.13,kind==='page'?1800:900);}else if(kind==='kitty'){tone(620,410,.16);tone(470,330,.12,.16);}else{tone(700,950,.09);tone(950,1150,.10,.08);}
  }catch{/* Audio is optional; play stays available when unsupported. */}}
 function say(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2400);}
-function render(){$('#sound-toggle').textContent=state.soundMuted?'Sound off':'Sound on';$('#sound-toggle').setAttribute('aria-pressed',String(!state.soundMuted));for(const p of state.pieces.filter(p=>p.kind==='doll'))p.page=state.page===1?1:p.id==='girl'?(state.page===2?2:0):3;
+function render(){for(const clip of state.pieces.filter(p=>p.kind==='clip')){if(clip.page!==1||clip.attached){const original=definitions.find(p=>p.id===clip.id);clip.x=original.x;clip.y=original.y;}clip.page=1;delete clip.attached;}$('#sound-toggle').textContent=state.soundMuted?'Sound off':'Sound on';$('#sound-toggle').setAttribute('aria-pressed',String(!state.soundMuted));for(const p of state.pieces.filter(p=>p.kind==='doll'))p.page=state.page===1?1:p.id==='girl'?(state.page===2?2:0):3;
  $('#cover-view').hidden=state.opened||state.coverSide==='back';$('#back-cover-view').hidden=state.opened||state.coverSide!=='back';$('#close-book').hidden=!state.opened;$('#play-view').hidden=!state.opened;
  $('#room').dataset.page=state.page;$('#room').setAttribute('aria-label',`${names[state.page]}. Move pieces with a pointer or arrow keys.`);
  const roomRects=[[0,0,566,887],[568,0,639,887],[1209,0,565,887]],r=roomRects[state.page===3?2:state.page];if(state.page===2){$('.room-art').style.backgroundImage=`url("${art.bathroom}")`;$('.room-art').style.backgroundSize='100% 100%';$('.room-art').style.backgroundPosition='center';}else{$('.room-art').style.backgroundImage=`url("${art.rooms}")`;$('.room-art').style.backgroundSize=`${1774/r[2]*100}% 100%`;$('.room-art').style.backgroundPosition=`${r[0]/(1774-r[2])*100}% 0`;}$('#bath-hit').hidden=state.page!==2;$('#bath-front').hidden=state.page!==2||!state.bathing;$('#bath-front').style.backgroundImage=`url("${art.bathroom}")`;$('#bath-bubbles').hidden=state.page!==2||!state.bathing;

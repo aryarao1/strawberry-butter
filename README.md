@@ -21,3 +21,5 @@ Kitten sound: [Kitten Mew by AntumDeluge](https://opengameart.org/content/kitten
 Lily has loose wavy pink hair with a fringe. Her hair stays loose after bathing and drying. Chibs is the cat. Lily and Cherry use Korean and Japanese system voices for their English greetings; pronunciation depends on those voices.
 
 Lily and Cherry take turns talking and gently playing together continuously while the closet is open. No subtitles are shown. Sound off, leaving the closet, closing the book, or hiding the page stops their conversation.
+
+The strawberry clips stay in the closet and do not attach to the characters.
