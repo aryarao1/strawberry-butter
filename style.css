@@ -62,3 +62,8 @@
 .room[data-page='1'] .piece[data-character='friend']>.sprite{animation:play-together 2.4s ease-in-out infinite;animation-delay:-1.2s}
 .room[data-page='1']:has(.dragging) .piece>.sprite{animation:none}
 @keyframes play-together{0%,100%{transform:translate(0,0)}35%{transform:translate(2px,-4px)}65%{transform:translate(-2px,-1px)}}
+
+#chair-front{position:absolute;inset:0;clip-path:polygon(46% 58%,96% 58%,96% 85%,46% 85%);pointer-events:none;z-index:15}
+#pancake-hit{position:absolute;left:3%;top:63%;width:38%;height:15%;z-index:16;cursor:pointer}
+.piece.snacking{animation:none}.room[data-page='1'] .piece.snacking>.sprite{animation:snack-bob .8s ease-in-out infinite}
+@keyframes snack-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}

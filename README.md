@@ -18,6 +18,6 @@ Original illustrations generated for this game. Girl greeting clips synthesized 
 
 Kitten sound: [Kitten Mew by AntumDeluge](https://opengameart.org/content/kitten-mew), released under CC0 and included unchanged.
 
-Lily has loose wavy pink hair with a fringe. Her towel hairstyle is a high ponytail. Chibs is the cat. Lily and Cherry use Korean and Japanese system voices for their English greetings; pronunciation depends on those voices.
+Lily has loose wavy pink hair with a fringe. Her hair stays loose after bathing and drying. Chibs is the cat. Lily and Cherry use Korean and Japanese system voices for their English greetings; pronunciation depends on those voices.
 
 Lily and Cherry take turns talking and gently playing together continuously while the closet is open. No subtitles are shown. Sound off, leaving the closet, closing the book, or hiding the page stops their conversation.
