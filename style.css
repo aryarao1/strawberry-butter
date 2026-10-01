@@ -54,6 +54,11 @@
 @keyframes string-stretch{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.1)}}
 @keyframes kitty-tug{0%,100%{transform:rotate(0)}50%{transform:rotate(-7deg) translate(-3px,5px)}}
 
-#sponge-drawing{aspect-ratio:330/505;background-size:380% 248.317%;background-position:17.857% 16.021%}
+#sponge-drawing{aspect-ratio:340/505;background-size:368.824% 248.317%;background-position:18.053% 16.021%}
 
 .sponge-motion{position:absolute;inset:0;transform-origin:50% 0;pointer-events:none}
+
+.room[data-page='1'] .piece[data-character='girl']>.sprite{animation:play-together 2.4s ease-in-out infinite}
+.room[data-page='1'] .piece[data-character='friend']>.sprite{animation:play-together 2.4s ease-in-out infinite;animation-delay:-1.2s}
+.room[data-page='1']:has(.dragging) .piece>.sprite{animation:none}
+@keyframes play-together{0%,100%{transform:translate(0,0)}35%{transform:translate(2px,-4px)}65%{transform:translate(-2px,-1px)}}
