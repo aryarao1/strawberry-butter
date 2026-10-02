@@ -67,3 +67,13 @@
 #pancake-hit{position:absolute;left:3%;top:63%;width:38%;height:15%;z-index:16;cursor:pointer}
 .piece.snacking{animation:none}.room[data-page='1'] .piece.snacking>.sprite{animation:snack-bob .8s ease-in-out infinite}
 @keyframes snack-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+.touch-clothes{display:none}
+@media(max-width:760px),(pointer:coarse){
+ .touch-clothes{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:180;display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid #dea4b8;border-radius:16px;background:#fffaf4;box-shadow:0 4px 22px #71364933}
+ #touch-clothes-name{flex:1;min-width:0;font-size:14px;font-weight:600;color:#713649}
+ #touch-take-off{min-height:48px;min-width:110px;padding:12px 18px;border-radius:12px;background:#b9446a;color:white;font-size:16px;font-weight:700;touch-action:manipulation}
+ body:has(#touch-clothes:not([hidden])){padding-bottom:90px}
+ body:has(#touch-clothes:not([hidden])) .toast{bottom:100px}
+ .piece-actions button{min-height:44px;padding:10px 12px}
+}

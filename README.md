@@ -23,3 +23,5 @@ Lily has loose wavy pink hair with a fringe. Her hair stays loose after bathing 
 Lily and Cherry take turns talking and gently playing together continuously while the closet is open. No subtitles are shown. Sound off, leaving the closet, closing the book, or hiding the page stops their conversation.
 
 The strawberry clips stay in the closet and do not attach to the characters.
+
+On phones, tapping worn clothing shows a large Take off control fixed at the bottom of the screen. Selecting a dressed character offers Take outfit off. Detached pieces retain their saved positions.
