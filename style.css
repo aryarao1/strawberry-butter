@@ -77,3 +77,8 @@
  body:has(#touch-clothes:not([hidden])) .toast{bottom:100px}
  .piece-actions button{min-height:44px;padding:10px 12px}
 }
+
+/* Animate the drawing only so sleeping pieces keep stable touch targets. */
+.piece.sleeping>.sprite{animation:sleep-breath 3.2s ease-in-out infinite;transform-origin:center 65%}
+@keyframes sleep-breath{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
+@media(prefers-reduced-motion:reduce){.piece.sleeping>.sprite{animation:none}}
